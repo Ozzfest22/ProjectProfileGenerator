@@ -49,6 +49,7 @@ def generate():
         # Correccion de color
         rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
+        
         # Procesamos
         resrostros = rostros.process(rgb)
 
@@ -155,9 +156,11 @@ def generate():
                 cv2.putText(frame, str(emociones), (75, 135), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 2)
                 cv2.putText(frame, str(race), (75, 180), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 2)
                 
-                if numero == 5:
+                if numero == 5:                   
                     Id = get_Id()
                     insertar_datos(edad, gen, race, emociones, Id)
+                    print('Datos insertados')
+ 
                     
 
                 numero += 1         
@@ -167,6 +170,10 @@ def generate():
         #cv2.imshow(" Deteccion de Edad ", frame)
         suc, encode = cv2.imencode('.jpg', frame)
         frame = encode.tobytes()
-
+        
         yield(b'--frame\r\n' b'Content-Type: image/jpeg\r\n\r\n' +
                     bytearray(frame) + b'\r\n')
+
+
+
+        

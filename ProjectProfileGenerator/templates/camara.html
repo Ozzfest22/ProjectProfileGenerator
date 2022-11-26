@@ -4,8 +4,30 @@
 
 <div class="container">
     <h1>Video en directo</h1>
+
     <img src="{{ url_for('video_feed') }}">
 </div>
 
 {% endblock %}
 
+{% block scripts %}
+
+{% if error %}
+<script>
+    Swal.fire(
+        'Error',
+        'No se ha detectado una camara web',
+        'error'
+    )
+</script>
+{% elif detectado %}
+<script>
+    Swal.fire(
+        'Camara detectada',
+        'Se ha detectado una camara web, se tomaran sus datos',
+        'success'
+    )
+</script>
+{% endif %}
+
+{% endblock %}

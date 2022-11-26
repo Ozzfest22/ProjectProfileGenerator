@@ -1,6 +1,7 @@
 from flask import render_template, request, redirect, session, url_for
 import ProjectProfileGenerator.Controllers.LoginController as login_controller
 from ProjectProfileGenerator import app
+import cv2
 
 IdUsu = None
 
