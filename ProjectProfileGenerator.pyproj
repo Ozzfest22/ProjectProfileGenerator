@@ -57,13 +57,16 @@
     <Folder Include="ProjectProfileGenerator\static\" />
     <Folder Include="ProjectProfileGenerator\static\content\" />
     <Folder Include="ProjectProfileGenerator\static\fonts\" />
+    <Folder Include="ProjectProfileGenerator\static\imagenes\" />
     <Folder Include="ProjectProfileGenerator\static\scripts\" />
     <Folder Include="ProjectProfileGenerator\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ProjectProfileGenerator\static\imagenes\user.png" />
     <Content Include="ProjectProfileGenerator\static\img.png" />
     <Content Include="ProjectProfileGenerator\templates\camara.html" />
     <Content Include="ProjectProfileGenerator\templates\login.html" />
+    <Content Include="ProjectProfileGenerator\templates\ver_perfil.html" />
     <Content Include="requirements.txt" />
     <Content Include="ProjectProfileGenerator\static\content\bootstrap.css" />
     <Content Include="ProjectProfileGenerator\static\content\bootstrap.min.css" />

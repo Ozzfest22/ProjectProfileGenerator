@@ -14,6 +14,15 @@ def insertar_datos(edad, gen, race, emociones, id):
     conexion.commit()
     conexion.close()
 
+def obtener_perfil(Id):
+    conexion = obtener_conexion()
+    perfil = None
+    with conexion.cursor() as cursor:
+        cursor.execute("exec sp_ObtenerPerfil ?", Id)
+        perfil = cursor.fetchone()
+
+    conexion.close()
+    return perfil
 
 # Declaramos la deteccion de rostros
 detros = mp.solutions.face_detection
@@ -24,7 +33,6 @@ dibujorostro = mp.solutions.drawing_utils
 # Realizamos VideoCaptura
 cap = cv2.VideoCapture(0)
 # Make the WSGI interface available at the top level so wfastcgi can get it.
-
 
 def generate():
      numero = 0
@@ -150,7 +158,8 @@ def generate():
                 if numero == 5:
                     Id = get_Id()
                     insertar_datos(edad, gen, race, emociones, Id)
-                           
+                    
+
                 numero += 1         
 
 
