@@ -21,7 +21,12 @@ def camara():
 def ver_perfil():
     id = get_Id()
     perfil = obtener_perfil(id)
-    imagen = os.path.join('static','imagenes','user.png')
+
+    if perfil[1] == 'Hombre':
+        imagen = os.path.join('static','imagenes','user_h.png')
+    else:
+        imagen = os.path.join('static','imagenes','user_m.png')
+   
     return render_template("ver_perfil.html", perfil = perfil, imagen = imagen)
 
 @app.route("/video_feed")

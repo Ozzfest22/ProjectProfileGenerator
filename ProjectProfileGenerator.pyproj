@@ -62,7 +62,8 @@
     <Folder Include="ProjectProfileGenerator\templates\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ProjectProfileGenerator\static\imagenes\user.png" />
+    <Content Include="ProjectProfileGenerator\static\imagenes\user_h.png" />
+    <Content Include="ProjectProfileGenerator\static\imagenes\user_m.png" />
     <Content Include="ProjectProfileGenerator\static\img.png" />
     <Content Include="ProjectProfileGenerator\templates\camara.html" />
     <Content Include="ProjectProfileGenerator\templates\login.html" />
